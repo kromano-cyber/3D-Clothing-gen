@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 
@@ -115,6 +115,7 @@ const Customizer = () => {
   }
 
   const readFile = (type) => {
+    if (!file) return;
     reader(file)
       .then((result) => {
         handleDecals(type, result);
